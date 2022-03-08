@@ -40,11 +40,12 @@ jobs:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
+         run: unzip /var/www/html/deploy.zip
          host: 13.127.83.57
          username: ubuntu
          key: ${{ secrets.KEY }}
          port: 22
-         run: unzip /var/www/html/deploy.zip
+        # run: unzip /var/www/html/deploy.zip
          script: whoami 
        # uses: uses: appleboy/ssh-action@master
         #with:
