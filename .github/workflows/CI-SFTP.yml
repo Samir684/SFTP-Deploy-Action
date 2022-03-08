@@ -38,12 +38,13 @@ jobs:
  # steps:
       - uses: actions/checkout@v2
       # Unzip and remove zip files
-      - run: unzip deploy.zip # && rm ./data/*.zip
+      
       - uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
         with:
          username: ubuntu
          server: 13.127.83.57
          port: 22 # default is 22
          ssh_private_key: ${{ secrets.KEY }}
+      - run: unzip deploy.zip # && rm ./data/*.zip  
       
        
