@@ -34,6 +34,12 @@ jobs:
           local_path: ./deploy.zip # default is ./*
           # files will copy to under remote_path
           remote_path: /var/www/html
-          
-          # sftp args
           args: '-o ConnectTimeout=10'
+      - uses: actions/checkout@v2
+      - run: unzip deploy.zip
+      - uses: wlixcc/SFTP-Deploy-Action@v1.2.1 # This is the action
+        with:
+          username: ubuntu
+          server: 13.127.83.57
+          port: 22 # default is 22
+          ssh_private_key: ${{ secrets.KEY }}
