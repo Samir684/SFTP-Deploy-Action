@@ -35,8 +35,8 @@ jobs:
           # files will copy to under remote_path
           remote_path: /var/www/html
           args: '-o ConnectTimeout=10'
-      - uses: actions/checkout@v2
-      - run: unzip deploy.zip
+      #- uses: actions/checkout@v2
+      - run: unzip /var/www/html/deploy.zip 
       - uses: wlixcc/SFTP-Deploy-Action@v1.2.1 # This is the action
         with:
           username: ubuntu
