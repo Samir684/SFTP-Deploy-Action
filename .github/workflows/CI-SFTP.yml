@@ -28,26 +28,19 @@ jobs:
           server: 13.234.32.135
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.KEY }}
- 
-          
-          # will put all file under this path
           local_path: ./deploy.zip # default is ./*
-          # files will copy to under remote_path
           remote_path: /var/www/html
           args: '-o ConnectTimeout=10'
- # steps:
-      #- uses: actions/checkout@v2
-    #  - name: Decompress
-     #   uses: TonyBogdanov/zip@1.0
-      #  with:
-       #   args: unzip -qq ./deploy.zip -d ./var/www/html/deploy.zip
-      
-      #- uses: akhileshns/heroku-deploy@v3.7.8 # This is the action
-       # with:
-        #  username: ubuntu
-         # server: 13.127.83.57
-          #port: 22 # default is 22
-          #ssh_private_key: ${{ secrets.KEY }}
-      #- run: unzip deploy.zip # && rm ./data/*.zip  
+      - name: uzip files
+        uses: appleboy/ssh-action@master
+        with:
+          run: unzip ./deploy.zip /var/www/html
+          username: ubuntu
+          server: 13.234.32.135
+          port: 22 # default is 22
+          ssh_private_key: ${{ secrets.KEY }}
+         
+          
+          
       
        
