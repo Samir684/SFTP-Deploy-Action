@@ -35,10 +35,10 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           run: unzip ./deploy.zip /var/www/html
-          username: ubuntu
-          server: 13.234.32.135
-          port: 22 # default is 22
-          ssh_private_key: ${{ secrets.KEY }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          HOST: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
          
           
           
