@@ -30,16 +30,16 @@ jobs:
           ssh_private_key: ${{ secrets.KEY }}
           local_path: ./deploy.zip # default is ./*
           remote_path: /var/www/html
-          args: '-o ConnectTimeout=10'
+          #args: '-o ConnectTimeout=10'
       - name: uzip files
         uses: appleboy/ssh-action@master
         with:
           
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          HOST: ${{ secrets.HOST }}
+          host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          run: unzip ./deploy.zip /var/www/html
+          run: unzip /var/www/html/deploy.zip
          
           
           
