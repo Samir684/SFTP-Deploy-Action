@@ -34,11 +34,12 @@ jobs:
       - name: uzip files
         uses: appleboy/ssh-action@master
         with:
-          run: unzip ./deploy.zip /var/www/html
+          
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           HOST: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
+          run: unzip ./deploy.zip /var/www/html
          
           
           
