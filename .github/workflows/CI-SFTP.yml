@@ -25,22 +25,22 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
           username: ubuntu
-          server: 35.154.17.76
+          server: 3.111.35.151
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.KEY }}
-          ssh_password: ${{ secrets.PASSWORD }}
+          #ssh_password: ${{ secrets.PASSWORD }}
           local_path: ./deploy.zip # default is ./*
-          remote_path: /var/www/html/Github_Action
+          remote_path: /var/www/html/
           #args: '-o ConnectTimeout=10'
       - name: ls -a via ssh
         uses: fifsky/ssh-action@master
         with:
           command: |
-           unzip /var/www/html/Github_Action/deploy.zip -d /var/www/html/Github_Action
-          host: 35.154.17.76
+           unzip /var/www/html/deploy.zip -d /var/www/html
+          host: 3.111.35.151
           user: ubuntu
           key: ${{ secrets.KEY }}
-          ssh_password: ${{ secrets.PASSWORD }}
+          #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
           
          
