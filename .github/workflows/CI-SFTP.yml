@@ -30,7 +30,7 @@ jobs:
           ssh_private_key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
           local_path: ./deploy.zip # default is ./*
-          remote_path: /var/www/html/
+          remote_path: /var/www/html
           #args: '-o ConnectTimeout=10'
       - name: ls -a via ssh
         uses: fifsky/ssh-action@master
