@@ -34,7 +34,7 @@ jobs:
       - name: ls -a via ssh
         uses: fifsky/ssh-action@master
         with:
-          command: |
+          command:
            unzip /var/www/html/deploy.zip 
           host: 13.234.32.135
           user: ubuntu
