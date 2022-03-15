@@ -36,7 +36,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-           unzip /var/www/html/deploy.zip -d /var/www/html && sudo rm -rf deploy.zip
+           unzip /var/www/html/deploy.zip -d /var/www/html && sudo rm -rf /var/www/html/deploy.zip
           host: 3.108.53.241
           user: ubuntu
           key: ${{ secrets.KEY }}
