@@ -25,7 +25,7 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
           username: ubuntu
-          server: 3.111.35.151
+          server: 3.108.53.241
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
@@ -37,7 +37,7 @@ jobs:
         with:
           command: |
            unzip /var/www/html/deploy.zip -d /var/www/html
-          host: 3.111.35.151
+          host: 3.108.53.241
           user: ubuntu
           key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
