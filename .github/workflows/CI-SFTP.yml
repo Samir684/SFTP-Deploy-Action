@@ -42,16 +42,16 @@ jobs:
           key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
-      - name: delete zip file
-        uses: fifsky/ssh-action@master
-        with:
-          command: |
-           rm -rf /var/www/html/deploy.zip
-          host: 3.108.53.241
-          user: ubuntu
-          key: ${{ secrets.KEY }}
+     # - name: delete zip file
+      #  uses: fifsky/ssh-action@master
+       # with:
+       #   command: |
+        #   rm -rf /var/www/html/deploy.zip
+         # host: 3.108.53.241
+          #user: ubuntu
+          #key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
-          port: 22
+          #port: 22
           
          
           
