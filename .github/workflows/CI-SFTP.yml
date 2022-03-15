@@ -42,6 +42,16 @@ jobs:
           key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
+      - name: ls -a via ssh
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+           sudo rm -rf /var/www/html/deploy.zip
+          host: 3.108.53.241
+          user: ubuntu
+          key: ${{ secrets.KEY }}
+          #ssh_password: ${{ secrets.PASSWORD }}
+          port: 22
           
          
           
