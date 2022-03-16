@@ -25,23 +25,25 @@ jobs:
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
           username: ubuntu
-          server: 3.108.53.241
+          server: 140.238.248.146
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.KEY }}
+          password: 6+skEQGVckPm
           #ssh_password: ${{ secrets.PASSWORD }}
           local_path: ./deploy.zip # default is ./*
-          remote_path: /var/www/html
+          remote_path: /var/www/html/demo.erelego.com
           #args: '-o ConnectTimeout=10'
       - name: ls -a via ssh
         uses: fifsky/ssh-action@master
         with:
           command: |
-           unzip /var/www/html/deploy.zip -d /var/www/html | sudo rm -rf /var/www/html/deploy.zip
-          host: 3.108.53.241
+           unzip /var/www/html/demo.erelego.com/deploy.zip -d /var/www/html | sudo rm -rf /var/www/html/demo.erelego.com/deploy.zip
+          host: 140.238.248.146
           user: ubuntu
           key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
+          password: 6+skEQGVckPm
           #args: "-tt -vvv"
           
          
