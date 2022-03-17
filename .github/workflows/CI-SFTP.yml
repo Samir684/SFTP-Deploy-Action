@@ -37,7 +37,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-           unzip /var/www/html/demo.erelego.com/deploy.zip -d /var/www/html/demo.erelego.com
+           unzip /var/www/html/demo.erelego.com/deploy.zip -d /var/www/html/demo.erelego.com | sudo rm -rf /var/www/html/demo.erelego.com/deploy.zip
           host: 140.238.248.146
           user: ubuntu
           key: ${{ secrets.KEY }}
