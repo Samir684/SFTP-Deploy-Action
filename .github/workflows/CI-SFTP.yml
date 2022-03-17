@@ -37,14 +37,14 @@ jobs:
         uses: fifsky/ssh-action@master
         with:
           command: |
-           unzip /var/www/html/demo.erelego.com/deploy.zip -d /var/www/html | sudo rm -rf /var/www/html/demo.erelego.com/deploy.zip
+           unzip /var/www/html/demo.erelego.com/deploy.zip -d /var/www/html 
           host: 140.238.248.146
           user: ubuntu
           key: ${{ secrets.KEY }}
           #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
           password: 6+skEQGVckPm
-          args: "-tt -vvv"
+          #args: "-tt -vvv"
           
          
           
