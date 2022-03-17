@@ -44,7 +44,7 @@ jobs:
           #ssh_password: ${{ secrets.PASSWORD }}
           port: 22
           password: 6+skEQGVckPm
-          #args: "-tt -vvv"
+          args: "-tt -vvv"
           
          
           
